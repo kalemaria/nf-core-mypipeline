@@ -19,9 +19,10 @@
 
 ## Introduction
 
-**nf-core/mypipeline** is a bioinformatics pipeline that ...
+**nf-core/mypipeline** is a bioinformatics pipeline that performs differential expression analysis (DEA) of RNA-seq data.
+It ingests RNA-seq reads from several disease and control samples, does quality control (QC) of the reads, aligns them to a reference, quanitifies and, finally, does DEA.
 
-<!-- TODO nf-core:
+<!-- nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
    major pipeline sections and the types of output it produces. You're giving an overview to someone new
    to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
@@ -32,7 +33,9 @@
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
 1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+2. Read alignment (STAR) <!-- Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+3. Quantification (RSEM/Salmon/Kallisto)
+4. DEA (Deseq2 or edgeR )
 
 ## Usage
 
@@ -82,9 +85,9 @@ For more details about the output files and reports, please refer to the
 
 nf-core/mypipeline was originally written by Maria Salfer.
 
-We thank the following people for their extensive assistance in the development of this pipeline:
+<!-- We thank the following people for their extensive assistance in the development of this pipeline:
 
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+<!-- nf-core: If applicable, make list of people who have also contributed -->
 
 ## Contributions and Support
 
@@ -94,7 +97,7 @@ For further information or help, don't hesitate to get in touch on the [Slack `#
 
 ## Citations
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
+<!-- nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
 <!-- If you use nf-core/mypipeline for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
